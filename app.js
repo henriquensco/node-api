@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 
 const app = express();
-const router = express.Router();
 const port = process.env.HOST_POST;
 
 const Product = require('./src/product/product.controller')
