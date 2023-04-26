@@ -8,10 +8,6 @@ const port = process.env.HOST_POST;
 
 const Product = require('./src/product/product.controller')
 
-/* router.get('/product', (req, res) => {
-    res.send(Product())
-}); */
-
 app.use('/product', Product);
 
 app.listen(port, () => {
