@@ -1,6 +1,7 @@
+require('dotenv').config();
+
 const { Client } = require('pg');
 const fs = require('fs');
-require('dotenv').config();
 
 const client = new Client({
 	user: process.env.DB_USER,
@@ -8,9 +9,9 @@ const client = new Client({
 	database: process.env.DB_DATABASE,
 	password: process.env.DB_PASSWORD,
 	port: process.env.DB_PORT,
-	//ssl: {
+	// ssl: {
 	//	ca: fs.readFileSync('../key.pem')
-	//}
+	// }
 });
 
 client.connect((err) => {
@@ -18,5 +19,7 @@ client.connect((err) => {
 		console.log(err);
 		return false;
 	};
-	console.log('Connectado!');
+
+	console.log('Connected!');
+	return true;
 });
