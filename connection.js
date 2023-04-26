@@ -14,7 +14,7 @@ const client = new Client({
 	// }
 });
 
-client.connect((err) => {
+client.connect(async (err) => {
 	if (err) {
 		console.log(err);
 		return false;
