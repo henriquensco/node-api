@@ -9,8 +9,9 @@ router.get('/', (req, res) => {
     res.send(ProductService.getAllProducts());
 });
 
-router.get('/find-one', (req, res) => {
-    res.send(ProductService.findOneProduct());
+router.get('/search-product', (req, res) => {
+    const { search } = req.query;
+    res.send(ProductService.searchProduct(search));
 });
 
 module.exports = router;

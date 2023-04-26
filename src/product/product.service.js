@@ -1,9 +1,19 @@
+const productList = require('./productList');
+
 module.exports = {
     getAllProducts() {
-        return { data: 'All' }
+        return productList;
     },
 
-    findOneProduct() {
-        return { data: 'Find One Product' }
+    searchProduct(search) {
+        let product = { message: 'Product Not Found' };
+
+        productList.find((value) => {
+            if (value.title == search) {
+                product = value;
+            }
+        })
+
+        return product;
     }
 }
